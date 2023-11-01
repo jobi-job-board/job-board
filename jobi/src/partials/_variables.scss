@@ -1,0 +1,91 @@
+//Font Import
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Roboto:ital,wght@1,300&display=swap');
+
+// Custom Font
+
+@font-face {
+  font-family: 'circular-std';
+  src: local('circular-std'),
+    url('../fonts/circular-std-medium-500.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'circular-std-light';
+  src: local('circular-std-light'),
+    url('../fonts/circular-std-light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'gordita-bold';
+  src: local('gordita-bold'),
+    url('../fonts/gordita-bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'gordita-light';
+  src: local('gordita-light'),
+    url('../fonts/gordita-light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'gordita-regular';
+  src: local('gordita-regular'),
+    url('../fonts/gordita-regular.otf') format('opentype');
+}
+
+//Font Families
+
+@mixin circular-std-light {
+  font-family: 'circular-std-light', serif;
+  font-weight: 400;
+}
+
+@mixin circular-std {
+  font-family: 'circular-std', serif;
+  font-weight: 500;
+}
+@mixin garamond-bold {
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+}
+
+@mixin garamond-light {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+}
+
+@mixin gordita-bold {
+  font-family: 'gordita-bold', serif;
+  font-weight: 600;
+}
+@mixin gordita-regular {
+  font-family: 'gordita-regular', serif;
+  font-weight: 500;
+}
+
+@mixin gordita-light {
+  font-family: 'gordita-light', serif;
+  font-weight: 400;
+}
+
+//Color Palette
+$black-4: rgba(0, 0, 0, 0.298);
+$black: rgba(0, 0, 0, 0.4);
+$black-2: rgba(0, 0, 0, 0.502);
+$black-3: rgba(0, 0, 0, 0.6);
+$secondary-color-5: rgba(0, 0, 0, 1);
+$jade: rgba(0, 180, 84, 1);
+$primary-color-3: rgba(0, 191, 87, 1);
+$zuccini: rgba(8, 60, 32, 1);
+$bush: rgba(9, 50, 28, 1);
+$woodsmoke: rgba(13, 13, 13, 1);
+$green-pea: rgba(36, 106, 68, 1);
+$shark: rgba(42, 42, 42, 1);
+$fruit-salad: rgba(71, 140, 96, 1);
+$wintergreen-dream: rgba(94, 141, 127, 1);
+$bon-jour: rgba(224, 224, 224, 1);
+$tara: rgba(224, 241, 232, 1);
+$white-2: rgba(255, 255, 255, 0.2);
+$white-3: rgba(235, 235, 235, 1);
+$white: rgba(255, 255, 255, 1);
+$header-green: rgba(37, 64, 53, 1);
+$lime-green: rgba(210, 243, 76, 1);

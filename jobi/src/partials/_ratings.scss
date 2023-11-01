@@ -1,0 +1,71 @@
+@use "./variables" as *;
+
+.ratings {
+  justify-content: flex-end;
+  gap: 5em;
+  margin-top: -100px;
+  padding: 24px;
+  padding-top:54px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.ratings-stats {
+  margin-left: -70px;
+}
+
+.ratings-avatars img,
+.plus {
+  border-radius: 50%;
+  border: 3px solid $white;
+  margin-left: -30px;
+  height: 69px;
+  width: 69px;
+}
+
+.plus {
+  background-color: #d8e7de;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratings-stats h6,
+.ratings-stars h6 {
+  color: $secondary-color-5;
+  margin: 0;
+}
+
+.ratings-stats p,
+.ratings-stars p {
+  margin: 0;
+}
+@media screen and (max-width: 840px) {
+  .ratings {
+    margin-top: 1rem;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .ratings {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    > * {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ratings {
+    > *:first-child {
+      display: none;
+    }
+  }
+}

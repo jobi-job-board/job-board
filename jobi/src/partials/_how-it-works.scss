@@ -1,0 +1,84 @@
+@use "./variables" as *;
+
+.how-it-works {
+  background-color: $white;
+  text-align: center;
+}
+.wrapper.how-it-works {
+  position: relative;
+  margin-top: 6.75em;
+}
+
+.wrapper.how-it-works h2 {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.wrapper.how-it-works h2:before,
+.wrapper.how-it-works h2:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.wrapper.how-it-works h2:before {
+  left: -100%;
+  transform: translateY(-50%);
+}
+
+.wrapper.how-it-works h2:after {
+  right: -100%;
+  transform: translateY(-50%);
+}
+.grid-container-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // margin-bottom: 12.5em;
+}
+
+.box {
+  width: 444px;
+  padding: 3.25em;
+}
+
+.box:hover {
+  border-bottom: 3px solid $primary-color-3;
+}
+
+.active:after {
+  content: "";
+  display: block;
+  position: relative;
+  border-bottom: 3px solid $primary-color-3;
+}
+
+@media screen and (max-width: 1400px) {
+  .grid-container-three {
+    grid-template-columns: 1fr 1fr;
+  }
+  .wrapper.how-it-works {
+    margin-top: 5rem;
+  }
+  .wrapper.how-it-works h2:after,
+  .wrapper.how-it-works h2::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .grid-container-three {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  .box {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}

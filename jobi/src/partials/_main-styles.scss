@@ -1,0 +1,537 @@
+@use "./variables" as *;
+
+//Main Styles
+html {
+  font-size: 125%;
+  background-color: $white;
+  scroll-behavior: smooth;
+}
+
+header {
+  padding: 0 1em;
+}
+
+body {
+  color: $zuccini;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.new-line {
+  display: block;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1600px;
+  margin: 6.875em auto;
+}
+.header-secondary-wrapper {
+  width: 100%;
+  max-width: 1600px;
+}
+
+.testimonial-wrapper {
+  width: 90%;
+  max-width: 1600px;
+  margin: 6.875em 0 6.875em auto;
+}
+
+.nav-wrapper {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-wrapper {
+  max-width: 1600px;
+  margin: 4em 8.75em;
+  margin-bottom: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary-color-5;
+}
+
+h1 {
+  // margin-top: 7.5em;
+  @include garamond-light;
+  font-size: calc(5.625rem / 5 * 4);
+  line-height: calc(6.25rem / 5 * 4);
+  text-align: left;
+}
+
+h2 {
+  @include garamond-bold;
+  font-size: calc(4.5rem / 5 * 4);
+  line-height: calc(4.875rem / 5 * 4);
+  text-align: left;
+}
+
+.h2-light {
+  @include garamond-light;
+  font-size: calc(4.563rem / 5 * 4);
+  line-height: calc(3.188rem / 5 * 4);
+  text-align: left;
+}
+
+.h2-small {
+  @include gordita-light;
+  font-size: calc(3.375em / 5 * 4);
+  line-height: calc(1.425em / 5 * 4);
+}
+
+h3 {
+  @include gordita-bold;
+  font-size: calc(3.25rem / 5 * 4);
+  line-height: calc(4.6875rem / 5 * 4);
+  text-align: center;
+  margin-top: 9.875em;
+}
+.h3-footer {
+  @include garamond-bold;
+  font-size: calc(3.25rem / 5 * 4);
+  line-height: calc(3.875rem / 5 * 4);
+  margin-top: 0;
+}
+.h4 {
+  @include gordita-bold;
+  font-size: calc(2.625rem / 5 * 4);
+  line-height: calc(2.625rem / 5 * 4);
+  color: $primary-color-3;
+  margin-top: 4.5625em;
+}
+
+.testimonials-left .h4 {
+  font-size: calc(2.625rem / 5 * 4);
+  line-height: calc(2.625rem / 5 * 4);
+  margin-top: 5.813rem;
+  color: $primary-color-3;
+}
+
+.testimonial-title {
+  @include gordita-bold;
+  font-size: calc(1.75rem / 5 * 4);
+  line-height: 1.81em;
+  color: $primary-color-3;
+  margin-top: 2.5rem !important;
+}
+
+.testimonial-name {
+  @include gordita-bold;
+  line-height: 1.75rem;
+}
+
+h5 {
+  @include gordita-light;
+  font-size: calc(1.25rem / 5 * 4);
+  line-height: calc(2.375rem / 5 * 4);
+  margin-top: 1.25em;
+}
+.regular {
+  @include gordita-bold;
+  font-size: calc(1.375rem / 5 * 4);
+  line-height: calc(2.125rem / 5 * 4);
+  margin-top: 1.69em;
+}
+
+.h5-strong {
+  @include gordita-bold;
+  font-size: calc(1.375rem / 5 * 4);
+  line-height: calc(1.9375em / 5 * 4);
+  margin-top: 2em;
+}
+
+.testimonial-quote-h6 {
+  @include gordita-light;
+  font-size: calc(1.25rem / 5 * 4);
+  line-height: calc(2.5rem / 5 * 4);
+  margin-top: 1.5rem;
+}
+
+h6 {
+  @include gordita-regular;
+  font-size: calc(1.5rem / 5 * 4);
+  line-height: calc(1.75rem / 5 * 4);
+  margin-top: 2.0625em;
+}
+
+.blog-h6 {
+  @include gordita-bold;
+  font-size: calc(1.5rem / 5 * 4);
+  line-height: calc(2.5rem / 5 * 4);
+  margin-top: 0.357em;
+  margin-bottom: 1.625em;
+}
+
+.stats-small-text {
+  @include circular-std-light;
+  font-size: calc(1.5rem / 5 * 4);
+  line-height: calc(1.688rem / 5 * 4);
+  margin-top: 10px;
+}
+
+p {
+  @include gordita-light;
+  font-size: calc(1rem / 5 * 4);
+  line-height: calc(2.1875rem / 5 * 4);
+  margin-top: 2.125em;
+}
+
+.p-opacity {
+  line-height: calc(1.75em / 5 * 4);
+  opacity: 50%;
+}
+
+.p-small {
+  font-size: calc(0.875rem / 5 * 4);
+  line-height: calc(1.875rem / 5 * 4);
+  margin-top: 1.3125em;
+  opacity: 50%;
+}
+
+.p-large {
+  font-size: calc(1.125rem / 5 * 4);
+  line-height: calc(2.625rem / 5 * 4);
+  opacity: 40%;
+}
+
+.p-strong {
+  @include circular-std;
+}
+
+.p-footer {
+  font-size: calc(1.25rem / 5 * 4);
+  margin-top: 0.438em;
+}
+
+.footer-header {
+  @include circular-std;
+  font-size: calc(1.5rem / 5 * 4);
+  line-height: calc(1.875rem / 5 * 4);
+  margin-top: 1.3em;
+  margin-bottom: 1.313em;
+}
+
+.navbar-menu,
+.login {
+  @include circular-std-light;
+  font-size: calc(1.125rem / 5 * 4);
+  line-height: calc(3.125rem / 5 * 4);
+}
+
+.navbar-menu:hover {
+  color: $primary-color-3;
+}
+
+.email a {
+  @include gordita-bold;
+  font-size: calc(1.125rem / 5 * 4);
+  margin-top: 0.625em;
+  color: $primary-color-3 !important;
+  line-height: calc(1.603rem / 5 * 4);
+  text-decoration: underline;
+  font-style: normal;
+  opacity: 1 !important;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.icon-1 {
+  margin-top: 4.4375em;
+}
+
+.icon-3 {
+  margin-top: 2.375em;
+  margin-right: 0.75em;
+  width: 8.0625em;
+  height: 2.1875em;
+}
+
+.logo-footer {
+  width: 100%;
+  max-height: 5.625em;
+  max-width: 7.4375em;
+}
+
+button {
+  background-color: $primary-color-3;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-round {
+  @include circular-std;
+  font-size: calc(1.25rem / 5 * 4);
+  line-height: calc(1.875rem / 5 * 4);
+  border-radius: 50px;
+  background-color: $primary-color-3;
+  color: $white;
+  margin-top: 3.125em;
+  padding: 0.645em 1.75em;
+}
+
+.btn-round:hover,
+.btn-round:focus {
+  opacity: 0.8;
+  color: $white;
+}
+
+.btn-small-round {
+  border-radius: 30px;
+  background-color: $primary-color-3;
+  color: $white;
+  border: 1px solid $primary-color-3;
+  padding: 10px 25px;
+  margin-top: 1.25em;
+}
+
+.btn-small-round:hover,
+.btn-small-round:focus {
+  opacity: 0.8;
+  color: $white;
+  background-color: $primary-color-3;
+}
+
+.btn-round-outline {
+  @include circular-std;
+  border-radius: 30px;
+  background-color: $white;
+  color: $primary-color-3;
+  border: 1px solid $primary-color-3;
+  padding: 10px 25px;
+  font-size: calc(1rem / 5 * 4);
+  line-height: calc(1.265rem / 5 * 4);
+}
+
+.btn-round-outline:hover,
+.btn-round-outline:focus {
+  opacity: 0.8;
+  color: $white;
+  background-color: $primary-color-3;
+}
+.btn-square {
+  border-radius: 5px;
+  background-color: $primary-color-3;
+  color: $white;
+  padding: 10px 25px;
+  width: 36%;
+}
+
+.btn-square-mt {
+  margin-top: 2.5em;
+}
+
+.btn-register {
+  @include circular-std;
+  font-size: calc(1.063rem / 5 * 4);
+  line-height: calc(1.875rem / 5 * 4);
+  border-radius: 50px;
+  background-color: $primary-color-3;
+  color: $white !important;
+  padding: 0.645em 1.75em;
+}
+
+.btn-square:hover,
+.btn-square:focus,
+.btn-register:hover,
+.btn-register:focus {
+  opacity: 0.8;
+  color: $white;
+}
+
+.btn-square-wide {
+  @include gordita-bold;
+  border-radius: 5px;
+  background-color: $primary-color-3;
+  color: $white;
+  padding: 20px 25px;
+  font-size: calc(1rem / 5 * 4);
+}
+
+.btn-square-wide:hover,
+.btn-square-wide:focus {
+  opacity: 0.8;
+  color: $white;
+}
+
+.btn-square-outline {
+  @include gordita-bold;
+  font-size: calc(1rem / 5 * 4);
+  border-radius: 5px;
+  background-color: $white;
+  border: 1px solid $primary-color-3;
+  color: $primary-color-3;
+  padding: 20px 25px;
+  margin-right: 20px;
+}
+
+.btn-square-outline:hover,
+.btn-square-outline:focus {
+  opacity: 0.8;
+  color: $white;
+  background-color: $primary-color-3;
+}
+
+a:hover,
+a:focus {
+  color: $primary-color-3;
+}
+
+form {
+  line-height: 0;
+}
+
+input {
+  border: none;
+  border-radius: 30px;
+  padding: 1.1em 0 0.75em 1.75em;
+  // padding: 10px 25px;
+  line-height: calc(1.25rem / 5 * 4);
+  width: 100%;
+  max-width: 19.875em;
+  margin-right: 1.125em;
+}
+input::placeholder {
+  font-size: 0.93rem;
+  @include gordita-light;
+}
+.display-block {
+  display: block;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.underline {
+  text-decoration: underline;
+}
+//margins
+.mt-11 {
+  margin-top: 0.69em;
+}
+//line heights
+.lh-small {
+  line-height: 1.875rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper.flex {
+    flex-direction: column;
+  }
+  .about-text {
+    min-width: 100%;
+  }
+  .hero-wrapper {
+    max-width: 1600px;
+    margin: 2em 2em;
+    margin-bottom: 0px;
+  }
+  .about-text {
+    text-align: center;
+    h2 {
+      text-align: center;
+    }
+    button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  h2 {
+    font-size: 40px;
+    line-height: unset;
+  }
+  .footer-top-wrapper {
+    flex-direction: column;
+    text-align: center;
+    .footer-top-text {
+      margin-bottom: 2rem;
+    }
+  }
+  .testimonials-left .h4 {
+    margin-top: 1rem;
+  }
+  .about-text {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .left {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .btn-square-outline {
+    margin-right: 10px;
+  }
+  .p-footer {
+    margin-top: 1em;
+  }
+
+  .testimonials-left .h4 {
+    font-size: 20px;
+  }
+  .footer-top {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    > *:last-child {
+      button {
+        margin-right: 0px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  footer {
+    margin-top: 0px !important;
+  }
+}

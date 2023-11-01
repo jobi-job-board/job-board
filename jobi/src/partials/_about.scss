@@ -1,0 +1,144 @@
+@use "./variables" as *;
+
+.about-text {
+  padding: 24px;
+  width: 489px;
+}
+
+.secondary-header {
+  text-align: left;
+}
+
+.about img {
+  height: 383px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+//code
+.about-left {
+  height: 657px;
+  position: relative;
+  width: 686px;
+}
+
+.overlap-group {
+  height: 657px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 686px;
+}
+
+.image-3 {
+  background-color: $bon-jour;
+  height: 460px;
+  left: 0;
+  position: absolute;
+  top: 114px;
+  width: 320px;
+}
+
+.image-2 {
+  background-color: $bon-jour;
+  height: 219px;
+  left: 373px;
+  position: absolute;
+  top: 438px;
+  width: 200px;
+}
+
+.image-1 {
+  background-color: $bon-jour;
+  height: 383px;
+  left: 370px;
+  position: absolute;
+  top: 0;
+  width: 316px;
+}
+
+.video-button {
+  background-color: $primary-color-3;
+  border-radius: 71.5px;
+  display: flex;
+  height: 143px;
+  left: 270px;
+  position: absolute;
+  top: 342px;
+  width: 143px;
+}
+
+.icon-play {
+  height: 55.43px;
+  margin-left: 59px;
+  margin-top: 43.4px;
+  width: 41.8px;
+}
+
+.shape {
+  height: 31px;
+  left: 122px;
+  position: absolute;
+  top: 2px;
+  width: 53px;
+}
+
+.about-text-h6 {
+  color: $zuccini;
+  font-size: calc(1.25rem / 5 * 4);
+  line-height: calc(3.438rem / 5 * 4);
+  @include gordita-bold;
+  margin: 0;
+}
+
+.about-text ul {
+  margin-top: 1.75em;
+}
+
+.about {
+  height: 783px;
+}
+
+@media screen and (max-width: 750px) {
+  .about-left {
+    height: unset;
+    width: 100%;
+  }
+  .overlap-group {
+    position: static;
+    height: unset;
+  }
+  .video-button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .image-1 {
+    left: unset;
+    right: 0px;
+    width: 100%;
+    height: unset;
+    position: static;
+    img {
+      width: 100%;
+    }
+  }
+  .overlap-group {
+    width: 100%;
+  }
+  .image-2,
+  .image-3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-text {
+    width: 100%;
+  }
+  .about-text {
+    button {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}

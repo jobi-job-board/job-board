@@ -1,0 +1,146 @@
+@use "./variables" as *;
+
+.hero {
+  background: url("../assets/homepage-section/hero-image.png") no-repeat;
+  min-height: 550px;
+  background-position: center !important;
+  background-size: cover !important;
+  width: 100%;
+}
+.hero-inner {
+  overflow-x: hidden;
+}
+.hero-col-left {
+  width: 608px;
+  color: $secondary-color-5;
+}
+
+.hero h5 {
+  padding-right: 120px;
+}
+
+.hero-col-right {
+  position: relative;
+}
+
+.hero-image-female {
+  position: absolute;
+  bottom: 0px;
+  left: 55%;
+  transform: rotate(-1deg);
+  max-width: 500px;
+  width: 100%;
+  padding-right: 20px;
+}
+
+img.cards {
+  position: absolute;
+  bottom: 2em;
+  right: 0;
+  width: 20%;
+}
+
+.hero-image-details {
+  position: relative;
+  left: 9em;
+  // left: 31em;
+  bottom: 16em;
+}
+
+header.hero {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.curve {
+  margin-bottom: -4px;
+  margin-left: -10px;
+  width: 100vw;
+}
+
+@media screen and (max-width: 1300px) {
+  .hero-image-details,
+  .hero-image-female,
+  .curve {
+    display: none;
+  }
+  .hero {
+    min-height: 850px;
+  }
+  .hero-col-left {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    h1 {
+      text-align: center;
+    }
+    h5 {
+      padding-right: 0px;
+    }
+  }
+}
+@media screen and (max-width: 840px) {
+  .navbar-menu {
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    height: 100vh;
+    top: 0px;
+    left: -100%;
+    width: 200px;
+    background-color: #fff;
+    margin-top: 0px;
+    z-index: 9;
+    transition: 0.3s ease all;
+  }
+  // .navbar-menu.active {
+  //   left: 0;
+  // }
+  .navbar-menu li {
+    margin-left: 0px;
+  }
+  header.hero {
+    min-height: 650px;
+  }
+  .hero-col-left h1 {
+    font-size: 40px;
+    line-height: unset;
+  }
+  .hero-col-left h5 {
+    font-size: 14px;
+    line-height: unset;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    button {
+      margin-top: 10px;
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .hero-col-left {
+    width: 100%;
+  }
+  .hero-col-left p {
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero form {
+    width: 100%;
+  }
+  header.hero {
+    min-height: 750px;
+  }
+}

@@ -1,0 +1,84 @@
+@use "./variables" as *;
+
+.hire-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.hire-cards li {
+  background-color: $white;
+  height: 100px;
+  min-width: 530px;
+  padding: 30px;
+}
+
+.hire-img-div {
+  margin-top: 54px;
+  padding: 26px;
+  padding: 3.688em;
+  padding-bottom: 103px;
+  height: 670px;
+  background: url("../assets/icons/bg-green-hire.png") bottom no-repeat;
+  width: 650px;
+  display: flex;
+}
+
+.hire-cards p {
+  margin-top: 0;
+}
+
+.hire-cards button {
+  margin-top: 0;
+  width: 60px;
+  height: 21px;
+  font-size: calc(0.563rem / 5 * 4);
+  padding: 1px 8px;
+  margin-right: 0;
+}
+
+.hire-cards img {
+  width: 51px;
+  height: 51px;
+}
+
+.hire-col-right {
+  align-items: flex-end;
+}
+
+.hire-col-left img {
+  margin-right: 18px;
+}
+.hire-job-col {
+  height: 51px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.hire-job-col p {
+  font-size: calc(1rem / 5 * 4);
+  line-height: calc(1.563rem / 5 * 4);
+}
+
+.p-opacity,
+.p-strong {
+  font-size: calc(0.8rem / 5 * 4);
+}
+
+@media screen and (max-width: 480px) {
+  .hire-cards .flex {
+    flex-direction: row !important;
+  }
+  .hire-cards .flex {
+    padding-left: 5px;
+    padding-right: 5px;
+    p {
+      font-size: 10px;
+    }
+  }
+  .hire-cards {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

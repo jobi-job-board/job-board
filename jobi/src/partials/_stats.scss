@@ -1,0 +1,33 @@
+@use "./variables" as *;
+
+.stats {
+  border-bottom: 1.5px solid #dfdfdf;
+}
+
+.stats h3 {
+  color: $secondary-color-5;
+  margin-top: 0;
+}
+
+.stats .wrapper {
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+@media screen and (max-width: 1400px) {
+  .stats {
+    .wrapper.flex {
+      > * + * {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .stats h3 {
+    font-size: 25px;
+  }
+  .stats .wrapper {
+    margin-top: 110px;
+    margin-bottom: 110px;
+  }
+}

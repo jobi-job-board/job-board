@@ -1,0 +1,26 @@
+@use "./variables" as *;
+
+.accordion {
+  width: 100%;
+}
+
+.open {
+  display: block;
+}
+
+.content {
+  display: none;
+  position: absolute;
+}
+
+.title {
+  cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .title {
+    flex-direction: row !important;
+    h6 {
+      margin-top: 0px;
+    }
+  }
+}

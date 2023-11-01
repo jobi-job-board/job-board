@@ -1,0 +1,54 @@
+@use "./variables" as *;
+
+.blog h2 {
+  text-align: center;
+}
+
+/* CSS */
+
+.blog-container {
+  gap: 45px;
+  margin-top: 5.188em;
+}
+
+.blog-wrapper {
+  margin-top: 12.5em;
+}
+
+.blog-col {
+  width: 441px;
+}
+
+.date {
+  margin-top: 2.813em;
+  text-transform: uppercase;
+  line-height: calc(1.212rem / 5 * 4);
+}
+
+.blog-image {
+  width: 410px;
+  height: 301px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.blog .btn-outline-round:hover {
+  background-color: $primary-color-3;
+}
+@media screen and (max-width: 1400px) {
+  .blog-container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .blog-col {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .blog-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
