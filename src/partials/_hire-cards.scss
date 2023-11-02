@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .hire-cards {
   display: flex;
@@ -14,13 +14,14 @@
   padding: 30px;
 }
 
-.hire-img-div {
+.hire-Image-div {
   margin-top: 54px;
   padding: 26px;
   padding: 3.688em;
   padding-bottom: 103px;
   height: 670px;
-  background: url("../assets/icons/bg-green-hire.png") bottom no-repeat;
+  background: url('../../public/assets/icons/bg-green-hire.png') bottom
+    no-repeat;
   width: 650px;
   display: flex;
 }
@@ -38,7 +39,7 @@
   margin-right: 0;
 }
 
-.hire-cards img {
+.hire-cards Image {
   width: 51px;
   height: 51px;
 }
@@ -47,7 +48,7 @@
   align-items: flex-end;
 }
 
-.hire-col-left img {
+.hire-col-left Image {
   margin-right: 18px;
 }
 .hire-job-col {

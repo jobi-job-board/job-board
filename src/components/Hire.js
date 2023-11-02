@@ -1,8 +1,10 @@
-import React from "react";
-import { peopleToHire, accordionData } from "../constants";
-import Accordion from "./Accordion";
-import HireCards from "./HireCards";
-import hireInputBox from "../assets/homepage-section/hire-input-box.png";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { peopleToHire, accordionData } from '../helpers/constants';
+import Accordion from './Accordion';
+import HireCards from './HireCards';
+import hireInputBox from '@/assets/homepage-section/hire-input-box.png';
 
 const Hire = () => {
   return (
@@ -11,7 +13,7 @@ const Hire = () => {
         <div className="hire-left">
           <HireCards peopleToHire={peopleToHire} />
           <div className="hire-input">
-            <img src={hireInputBox} alt="Input Box" />
+            <Image src={hireInputBox} alt="Input Box" />
           </div>
         </div>
         <div className="hire-right">

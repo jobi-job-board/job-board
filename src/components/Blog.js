@@ -1,5 +1,7 @@
-import React from "react";
-import { blogData } from "../constants";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { blogData } from '../helpers/constants';
 
 const Blog = () => {
   return (
@@ -11,7 +13,7 @@ const Blog = () => {
             {blogData.map((blog) => (
               <li key={blog.id} className="blog-col">
                 <article className="card-image">
-                  <img
+                  <Image
                     className="blog-image"
                     src={blog.image}
                     alt={`${blog.title}`}

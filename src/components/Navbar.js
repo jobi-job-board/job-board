@@ -1,5 +1,6 @@
 'use client';
-import logo from '../assets/logo.png';
+import Image from 'next/image';
+import logo from '@/assets/logo.png';
 import Link from 'next/link';
 import { List } from 'phosphor-react';
 import { useState } from 'react';
@@ -10,8 +11,8 @@ const Navbar = () => {
     <div>
       <nav className="nav">
         <div className="navbar-logo">
-          <Link to="/">
-            <img src={logo} alt="Company logo" />
+          <Link href="/">
+            <Image src={logo} alt="Company logo" />
           </Link>
         </div>
         {/* mobile nav */}
@@ -25,19 +26,19 @@ const Navbar = () => {
           <div className="mobile-menu">
             <ul className={`mobile-nav-menu ${showHamburger ? '' : 'none'}`}>
               <li>
-                <Link to="/">Home</Link>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <Link to="/">Job</Link>
+                <Link href="/">Job</Link>
               </li>
               <li>
-                <Link to="/">Explore</Link>
+                <Link href="/">Explore</Link>
               </li>
               <li>
-                <Link to="/">Category</Link>
+                <Link href="/">Category</Link>
               </li>
               <li>
-                <Link to="/">Pages</Link>
+                <Link href="/">Pages</Link>
                 <div className="nav-divider"></div>
               </li>
               <li>
@@ -56,19 +57,19 @@ const Navbar = () => {
         <div className="top-nav">
           <ul className="navbar-menu flex">
             <li>
-              <Link to="/">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link to="/">Job</Link>
+              <Link href="/">Job</Link>
             </li>
             <li>
-              <Link to="/">Explore</Link>
+              <Link href="/">Explore</Link>
             </li>
             <li>
-              <Link to="/">Category</Link>
+              <Link href="/">Category</Link>
             </li>
             <li>
-              <Link to="/">Pages</Link>
+              <Link href="/">Pages</Link>
             </li>
           </ul>
         </div>

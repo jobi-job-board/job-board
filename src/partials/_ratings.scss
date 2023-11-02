@@ -1,11 +1,11 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .ratings {
   justify-content: flex-end;
   gap: 5em;
   margin-top: -100px;
   padding: 24px;
-  padding-top:54px;
+  padding-top: 54px;
   background-color: transparent;
   position: relative;
   z-index: 1;
@@ -15,7 +15,7 @@
   margin-left: -70px;
 }
 
-.ratings-avatars img,
+.ratings-avatars Image,
 .plus {
   border-radius: 50%;
   border: 3px solid $white;

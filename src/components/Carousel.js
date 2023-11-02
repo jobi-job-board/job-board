@@ -1,8 +1,10 @@
-import Slider from "react-slick";
-import { testimonialData } from "../constants";
-import quote from "../assets/icons/quote.png";
-import stars from "../assets/icons/rating.png";
-import React from "react";
+'use client';
+import Image from 'next/image';
+import Slider from 'react-slick';
+import { testimonialData } from '../helpers/constants';
+import quote from '@/assets/icons/quote.png';
+import stars from '@/assets/icons/rating.png';
+import React from 'react';
 
 const Carousel = ({ Width }) => {
   const settings = {
@@ -28,12 +30,12 @@ const Carousel = ({ Width }) => {
         {testimonialData.map((person, index) => (
           <li key={person.id} className="slide  flex-col" data-width={Width}>
             <h5 className="testimonial-title">{person.title}</h5>
-            <img src={stars} className="testimonial-stars" alt="stars" />
+            <Image src={stars} className="testimonial-stars" alt="stars" />
             <h6 className="testimonial-quote-h6">{person.quote}</h6>
             <hr />
             <div className="flex-start testimonial-author-mt">
               <div className="testimonial-avatar">
-                <img
+                <Image
                   src={person.avatar}
                   alt={`${person.name} avatar`}
                   width={50}
@@ -44,7 +46,7 @@ const Carousel = ({ Width }) => {
                 <div>{person.location}</div>
               </div>
               <div>
-                <img src={quote} alt="quote mark" />
+                <Image src={quote} alt="quote mark" />
               </div>
             </div>
           </li>

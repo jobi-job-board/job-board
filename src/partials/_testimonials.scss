@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .testimonials {
   margin-top: 6.875rem;
@@ -12,7 +12,8 @@
 
 .testimonials-right {
   width: 70%;
-  background: url("../assets/icons/bg-green-testimonials.png") no-repeat;
+  background: url('../../public/assets/icons/bg-green-testimonials.png')
+    no-repeat;
   //   background-size: cover;
   background-position: right;
   height: 690px;

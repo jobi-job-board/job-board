@@ -1,5 +1,6 @@
 'use client';
-import logoLight from '../assets/homepage-section/logo-light.png';
+import Image from 'next/image';
+import logoLight from '@/assets/homepage-section/logo-light.png';
 import Link from 'next/link';
 import { List } from 'phosphor-react';
 import { useState } from 'react';
@@ -11,7 +12,7 @@ const Navbar = () => {
       <nav className="nav-light">
         <div className="navbar-logo">
           <Link to="/">
-            <img src={logoLight} alt="Company logo" />
+            <Image src={logoLight} alt="Company logo" />
           </Link>
         </div>
         {/* mobile nav */}

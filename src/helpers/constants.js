@@ -1,11 +1,11 @@
-import hire1 from '../assets/hire/hire-1.png';
-import hire2 from '../assets/hire/hire-2.png';
-import hire3 from '../assets/hire/hire-3.png';
-import hire4 from '../assets/hire/hire-4.png';
-import avatar from '../assets/avatars/testimonial-male.png';
-import blog1 from '../assets/blog-images/blog-1.png';
-import blog2 from '../assets/blog-images/blog-2.png';
-import blog3 from '../assets/blog-images/blog-3.png';
+import hire1 from '@/assets/hire/hire-1.png';
+import hire2 from '@/assets/hire/hire-2.png';
+import hire3 from '@/assets/hire/hire-3.png';
+import hire4 from '@/assets/hire/hire-4.png';
+import avatar from '@/assets/avatars/testimonial-male.png';
+import blog1 from '@/assets/blog-images/blog-1.png';
+import blog2 from '@/assets/blog-images/blog-2.png';
+import blog3 from '@/assets/blog-images/blog-3.png';
 
 export const peopleToHire = [
   {

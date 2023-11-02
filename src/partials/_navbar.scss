@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .nav {
   height: 90px;
@@ -35,7 +35,7 @@
   margin-left: 30px;
 }
 
-.navbar-light .navbar-logo img {
+.navbar-light .navbar-logo Image {
   padding: 1.375em 0;
 }
 
@@ -53,16 +53,6 @@
   margin-right: 30px;
   font-weight: 500;
 }
-
-// .active:after {
-//   content: "";
-//   display: block;
-//   position: relative;
-//   border-bottom: 2px solid $primary-color-3;
-//   width: 60%;
-//   margin-top: 0.5em;
-
-// }
 
 .hamburger-icon {
   color: $primary-color-3;
@@ -157,7 +147,7 @@
   }
 
   .navbar-logo {
-    img {
+    Image {
       width: 100px;
     }
   }

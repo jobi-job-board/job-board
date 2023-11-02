@@ -1,7 +1,8 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .hero {
-  background: url("../assets/homepage-section/hero-image.png") no-repeat;
+  background: url('../../public/assets/homepage-section/hero-image.png')
+    no-repeat;
   min-height: 550px;
   background-position: center !important;
   background-size: cover !important;
@@ -33,7 +34,7 @@
   padding-right: 20px;
 }
 
-img.cards {
+Image.cards {
   position: absolute;
   bottom: 2em;
   right: 0;

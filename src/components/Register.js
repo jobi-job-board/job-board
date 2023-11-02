@@ -1,6 +1,7 @@
-import React from "react";
-import Footer from "./Footer";
-import NavbarLight from "./NavbarLight";
+'use client';
+import React from 'react';
+import Footer from './Footer';
+import NavbarLight from './NavbarLight';
 
 const Register = () => {
   return (

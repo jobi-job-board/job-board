@@ -1,7 +1,9 @@
-import women from "../assets/homepage-section/female.png";
-import cards from "../assets/homepage-section/cards.png";
-import curve from "../assets/homepage-section/curve.png";
-import Navbar from "./Navbar";
+'use client';
+import Image from 'next/image';
+import women from '@/assets/homepage-section/female.png';
+import cards from '@/assets/homepage-section/cards.png';
+import curve from '@/assets/homepage-section/curve.png';
+import Navbar from './Navbar';
 const Hero = () => {
   return (
     <header className="hero">
@@ -29,16 +31,16 @@ const Hero = () => {
           </p>
         </div>
         <div className="hero-col-right">
-          {" "}
-          <img className="hero-image-female" src={women} alt="woman" />
+          {' '}
+          <Image className="hero-image-female" src={women} alt="woman" />
         </div>
         <div className="hero-image-details">
-          <img className="cards" src={cards} alt="cards" />
-          {/* <img className="trusted" src={trusted} alt="trusted by" /> */}
+          <Image className="cards" src={cards} alt="cards" />
+          {/* <Image className="trusted" src={trusted} alt="trusted by" /> */}
         </div>
       </div>
       <div>
-        <img src={curve} alt="Bottom curve of section" className="curve" />
+        <Image src={curve} alt="Bottom curve of section" className="curve" />
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .flex-50 {
   flex: 0 1 50%;
@@ -73,7 +73,7 @@ hr {
   top: -10px;
 }
 
-.hire-input img {
+.hire-input Image {
   height: 167px;
   width: 570px;
 }
@@ -92,14 +92,14 @@ hr {
     width: 100%;
   }
   .hire-left,
-  .hire-img-div {
+  .hire-Image-div {
     width: 100%;
   }
   .hire-input {
     top: -10px;
     left: unset;
   }
-  .hire-img-div {
+  .hire-Image-div {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
@@ -115,7 +115,7 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-  .hire-input img {
+  .hire-input Image {
     width: 100%;
     object-fit: contain;
   }
@@ -123,7 +123,7 @@ hr {
     width: 100%;
     min-width: 100% !important;
   }
-  .hire-img-div {
+  .hire-Image-div {
     width: 100% !important;
   }
   .hire {

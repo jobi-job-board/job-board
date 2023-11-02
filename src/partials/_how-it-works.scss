@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .how-it-works {
   background-color: $white;
@@ -18,7 +18,7 @@
 
 .wrapper.how-it-works h2:before,
 .wrapper.how-it-works h2:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 50%;
@@ -52,7 +52,7 @@
 }
 
 .active:after {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   border-bottom: 3px solid $primary-color-3;

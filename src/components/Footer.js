@@ -1,12 +1,14 @@
+'use client';
 import React from 'react';
-import logo from '../assets/logo.png';
+import Image from 'next/image';
+import logo from '@/assets/logo.png';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import blackSquare from '../assets/icons/black-square.png';
+import blackSquare from '@/assets/icons/black-square.png';
 import {
   footerLinksData,
   footerProductsData,
   footerLegalData,
-} from '../constants';
+} from '../helpers/constants';
 
 const Footer = () => {
   return (
@@ -27,12 +29,12 @@ const Footer = () => {
         <div className="footer-bottom flex-footer">
           <ul className="footer-bottom-col-1">
             <li>
-              <img src={logo} alt="Jobi logo" />
+              <Image src={logo} alt="Jobi logo" />
             </li>
             <li className="email">
               <address>
-                <a href="mailto:jobisupport@company.com">
-                  jobisupport@company.com
+                <a href="mailto:jobisupport@/company.com">
+                  jobisupport@/company.com
                 </a>
               </address>
             </li>
@@ -68,7 +70,7 @@ const Footer = () => {
               </ul>
             </li>
             <li>
-              <img
+              <Image
                 src={blackSquare}
                 alt="Black square"
                 width={53}
@@ -120,7 +122,7 @@ const Footer = () => {
           <a href="#">Contact Us</a>
         </div>
         <div>
-          <p>Copyright @2022 jobi inc.</p>
+          <p>Copyright @/2022 jobi inc.</p>
         </div>
         <div>
           <ul className="flex footer-copyright-socials">
