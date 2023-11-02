@@ -71,16 +71,16 @@
   [dir='rtl'] & {
     float: right;
   }
-  Image {
+  img {
     display: block;
   }
-  &.slick-loading Image {
+  &.slick-loading img {
     display: none;
   }
 
   display: none;
 
-  &.dragging Image {
+  &.dragging img {
     pointer-events: none;
   }
 

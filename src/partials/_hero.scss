@@ -1,7 +1,7 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .hero {
-  background: url("../../public/assets/homepage-section/hero-image.png")
+  background: url('../../public/assets/homepage-section/hero-image.png')
     no-repeat;
   min-height: 550px;
   background-position: center !important;
@@ -32,13 +32,15 @@
   max-width: 500px;
   width: 100%;
   padding-right: 20px;
+  height: auto;
 }
 
-.cards {
+img.cards {
   position: absolute;
   bottom: 2em;
   right: 0;
   width: 20%;
+  height: auto;
 }
 
 .hero-image-details {
@@ -58,6 +60,7 @@ header.hero {
   margin-bottom: -4px;
   margin-left: -10px;
   width: 100vw;
+  height: auto;
 }
 
 @media screen and (max-width: 1300px) {

@@ -73,7 +73,7 @@ hr {
   top: -10px;
 }
 
-.hire-input Image {
+.hire-input img {
   height: 167px;
   width: 570px;
 }
@@ -92,14 +92,14 @@ hr {
     width: 100%;
   }
   .hire-left,
-  .hire-Image-div {
+  .hire-image-div {
     width: 100%;
   }
   .hire-input {
     top: -10px;
     left: unset;
   }
-  .hire-Image-div {
+  .hire-image-div {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
@@ -115,7 +115,7 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-  .hire-input Image {
+  .hire-input img {
     width: 100%;
     object-fit: contain;
   }
@@ -123,7 +123,7 @@ hr {
     width: 100%;
     min-width: 100% !important;
   }
-  .hire-Image-div {
+  .hire-img-div {
     width: 100% !important;
   }
   .hire {
