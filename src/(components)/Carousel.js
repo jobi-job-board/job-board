@@ -1,10 +1,9 @@
-'use client';
-import Image from 'next/image';
-import Slider from 'react-slick';
-import { testimonialData } from '../helpers/constants';
-import quote from '@/assets/icons/quote.png';
-import stars from '@/assets/icons/rating.png';
-import React from 'react';
+"use client";
+import Image from "next/image";
+import Slider from "react-slick";
+import { testimonialData } from "../helpers/constants";
+import quote from "@/assets/icons/quote.png";
+import stars from "@/assets/icons/rating.png";
 
 const Carousel = ({ Width }) => {
   const settings = {
