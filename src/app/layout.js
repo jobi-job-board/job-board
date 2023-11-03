@@ -1,8 +1,11 @@
 import '../App.scss';
 // import 'slick'
-import { Inter } from 'next/font/google';
+import { EB_Garamond } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const ebGaramond = EB_Garamond({
+  weight: '500',
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: 'Jobi',
@@ -12,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={ebGaramond.className}>{children}</body>
     </html>
   );
 }

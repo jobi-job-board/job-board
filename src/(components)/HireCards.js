@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const HireCards = ({ peopleToHire }) => {
   return (
-    <div className="hire-Image-div flex-col">
+    <div className="hire-img-div flex-col">
       <ul className="hire-cards">
         {peopleToHire?.map((person) => (
           <li key={person.id} className="flex">
