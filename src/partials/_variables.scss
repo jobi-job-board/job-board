@@ -4,66 +4,71 @@
 // Custom Font
 
 @font-face {
-  font-family: 'circular-std';
-  src: local('circular-std'),
-    url('../fonts/circular-std-medium-500.ttf') format('truetype');
+  font-family: "circular-std";
+  src: local("circular-std"),
+    url("../fonts/circular-std-medium-500.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'circular-std-light';
-  src: local('circular-std-light'),
-    url('../fonts/circular-std-light.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'gordita-bold';
-  src: local('gordita-bold'),
-    url('../fonts/gordita-bold.otf') format('opentype');
+  font-family: "circular-std-light";
+  src: local("circular-std-light"),
+    url("../fonts/circular-std-light.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'gordita-light';
-  src: local('gordita-light'),
-    url('../fonts/gordita-light.otf') format('opentype');
+  font-family: "gordita-bold";
+  src: local("gordita-bold"),
+    url("../fonts/gordita-bold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'gordita-regular';
-  src: local('gordita-regular'),
-    url('../fonts/gordita-regular.otf') format('opentype');
+  font-family: "gordita-light";
+  src: local("gordita-light"),
+    url("../fonts/gordita-light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "gordita-regular";
+  src: local("gordita-regular"),
+    url("../fonts/gordita-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond-VariableFont_wght.ttf");
 }
 
 //Font Families
 
 @mixin circular-std-light {
-  font-family: 'circular-std-light', serif;
+  font-family: "circular-std-light", serif;
   font-weight: 400;
 }
 
 @mixin circular-std {
-  font-family: 'circular-std', serif;
+  font-family: "circular-std", serif;
   font-weight: 500;
 }
 @mixin garamond-bold {
-  font-family: 'EB Garamond', serif;
+  font-family: "EB Garamond", serif;
   font-weight: 600;
 }
 
 @mixin garamond-light {
-  font-family: 'EB Garamond', serif;
+  font-family: "EB Garamond", serif;
   font-weight: 500;
 }
 
 @mixin gordita-bold {
-  font-family: 'gordita-bold', serif;
+  font-family: "gordita-bold", serif;
   font-weight: 600;
 }
 @mixin gordita-regular {
-  font-family: 'gordita-regular', serif;
+  font-family: "gordita-regular", serif;
   font-weight: 500;
 }
 
 @mixin gordita-light {
-  font-family: 'gordita-light', serif;
+  font-family: "gordita-light", serif;
   font-weight: 400;
 }
 

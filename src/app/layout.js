@@ -1,15 +1,15 @@
-import '../App.scss';
-// import 'slick'
-import { EB_Garamond } from 'next/font/google';
+import "../App.scss";
+// import "slick";
+import { EB_Garamond } from "next/font/google";
 
 const ebGaramond = EB_Garamond({
-  weight: '500',
-  subsets: ['latin'],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {
-  title: 'Jobi',
-  description: 'Your first stop to find a job!',
+  title: "Jobi",
+  description: "Your first stop to find a job!",
 };
 
 export default function RootLayout({ children }) {
