@@ -1,7 +1,7 @@
-import prisma from '@lib/prisma';
-import { NextRequest, NextResponse } from 'next/server';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+import prisma from "@lib/prisma";
+import { NextRequest, NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 dotenv.config();
 
 export async function middleware(req, res) {
@@ -10,7 +10,7 @@ export async function middleware(req, res) {
     if (!req.headers.authorization) {
       return NextResponse.next();
     }
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization.split(" ")[1];
     // Use the userId from the decoded token to find the corresponding user in the database
     const { userId } = jwt.verify(token, process.env.JWT_SECRET);
     const user = await prisma.user.findUnique({
@@ -40,7 +40,7 @@ export function handle404(req, res) {
   return NextResponse.json(
     {
       success: false,
-      error: 'Route does not exist',
+      error: "Route does not exist",
     },
     { status: 404 }
   );
@@ -54,13 +54,13 @@ export function handleError(error, req, res) {
       error: error.message,
     },
     { status: 500 }
-  ); 
+  );
 }
 
 const PORT = process.env.PORT || 3000;
 
-export default {
-  middleware,
-  handle404,
-  handleError,
-};
+// export default {
+//   middleware,
+//   handle404,
+//   handleError,
+// };
