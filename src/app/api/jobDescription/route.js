@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import prisma from '@lib/prisma';
+import { NextResponse } from "next/server";
+import prisma from "../../../lib/prisma";
 
 //GET / job listings;
 export async function GET() {
@@ -17,30 +17,24 @@ export async function GET() {
   }
 }
 
-export async function POST(request) {
-  const res = await request.json();
-  const { title, content } = res;
-  console.log({ res });
+// export async function POST(request) {
+//   const res = await request.json();
+//   const { title, content } = res;
+//   console.log({ res });
 
-  const result = await prisma.posts.create({
-    data: {
-      title,
-      content,
-      author: {
-        create: {
-          name: 'Ryan',
-        },
-      },
-    },
-  });
+//   const result = await prisma.posts.create({
+//     data: {
+//       title,
+//       content,
+//       author: {
+//         create: {
+//           name: 'Ryan',
+//         },
+//       },
+//     },
+//   });
 
-  return NextResponse.json({
-    data: res,
-  });
-}
-
-export async function PATCH() {
-  return NextResponse.json({
-    hello: 'world',
-  });
-}
+//   return NextResponse.json({
+//     data: res,
+//   });
+// }
