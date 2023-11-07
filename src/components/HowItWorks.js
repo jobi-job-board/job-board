@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
-import icon1 from "@/assets/icons/icon-1.png";
-import icon2 from "@/assets/icons/icon-2.png";
-import icon3 from "@/assets/icons/icon-3.png";
+'use client';
+import Image from 'next/image';
+import icon1 from '@/assets/icons/icon-1.png';
+import icon2 from '@/assets/icons/icon-2.png';
+import icon3 from '@/assets/icons/icon-3.png';
 
 const HowItWorks = () => {
   return (
@@ -16,7 +16,7 @@ const HowItWorks = () => {
               <Image src={icon1} alt="icon one" />
               <h5 className="h5-strong">Create Account</h5>
               <p className="mt-11 lh-small">
-                It&apos;s very easy to open an account and start your journey.
+                It's very easy to open an account and start your journey.
               </p>
             </li>
             <li className="box">

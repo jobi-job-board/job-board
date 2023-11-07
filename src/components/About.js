@@ -21,11 +21,7 @@ const About = () => {
             </div>
             <div className="image-1">
               {' '}
-              <Image
-                className="about-image-1"
-                src={aboutOne}
-                alt="Photos of people"
-              />
+              <Image src={aboutOne} alt="Photos of people" />
             </div>
             <div className="video-button">
               {' '}
