@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import prisma from '@lib/partials';
+import prisma from '../../../../lib/prisma';
 
 //GET / job listings;
 
