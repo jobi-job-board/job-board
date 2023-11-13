@@ -1,6 +1,7 @@
-import prisma from "src/lib/prisma";
+import { PrismaClient } from "@prisma/client/edge";
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
+
 // import dotenv from "dotenv";
 // dotenv.config();
 
@@ -12,14 +13,22 @@ export async function middleware(req, res) {
       return NextResponse.next();
     }
     const token = header.split(" ")[1];
+
     // Use the userId from the decoded token to find the corresponding user in the database
-    const testing = await jwtVerify(token, process.env.JWT_SECRET);
-    console.log(testing);
+
+    // console.log("test");
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+    // console.log(secret);
+    const { payload } = await jwtVerify(token, secret);
+    const { userId } = payload;
+    console.log(userId);
+    const prisma = new PrismaClient();
     const user = await prisma.user.findUnique({
       where: {
         id: userId,
       },
     });
+    console.log(user);
     // If no user is found with the given userId, continue to the next middleware
     if (!user) {
       return NextResponse.next();

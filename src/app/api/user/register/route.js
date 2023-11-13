@@ -1,7 +1,8 @@
 import prisma from "src/lib/prisma";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import { SignJWT } from "jose";
+import { createSecretKey } from "crypto";
 
 export async function POST(req) {
   try {
@@ -54,7 +55,13 @@ export async function POST(req) {
         role,
       },
     });
-    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
+    const secretKey = createSecretKey(process.env.JWT_SECRET, "utf-8");
+
+    const token = await new SignJWT({ userId: user.id })
+      .setProtectedHeader({ alg: "HS256" })
+      .sign(secretKey);
+    console.log(token);
+    // const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
     return NextResponse.json({
       success: true,
       token,
