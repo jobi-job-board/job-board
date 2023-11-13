@@ -9,7 +9,6 @@ export async function middleware(req, res) {
     // Check if the request has an "Authorization" header
     const header = req.headers.get("authorization");
     if (!header) {
-      console.log("doesn't exist?");
       return NextResponse.next();
     }
     const token = header.split(" ")[1];
