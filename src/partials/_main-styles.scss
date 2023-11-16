@@ -302,6 +302,12 @@ button {
   justify-content: space-between;
 }
 
+.flex-col-cen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .flex-start {
   display: flex;
   justify-content: flex-start;

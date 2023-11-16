@@ -1,5 +1,15 @@
 @use './variables' as *;
 
+.register-form {
+  max-width: 740px;
+  height: 950px;
+  flex-shrink: 0;
+}
+
+.register-wrapper {
+  margin: 167px 430px;
+  background-color: $green-wrapper;
+}
 .register-header {
   background: $header-green;
   display: grid;
@@ -13,6 +23,10 @@
   margin-top: 0.875em;
 }
 
+.register-h2 {
+  margin-top: 24px;
+  margin-bottom: 28px;
+}
 .register p {
   color: $white;
   font-size: calc(1.375rem / 5 * 4);
