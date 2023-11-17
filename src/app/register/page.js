@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Navbar from "src/components/Navbar";
+import NavbarDark from "src/components/NavbarDark";
 import { authenticate } from "../lib/actions";
 
 export default function Register() {
@@ -38,7 +38,7 @@ export default function Register() {
 
   return (
     <>
-      <Navbar />
+      <NavbarDark />
       <div className="register-wrapper">
         <form className="register-form flex-col-cen" onSubmit={handleSubmit}>
           <h2 className="register-h2">Create Account</h2>
