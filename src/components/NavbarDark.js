@@ -1,15 +1,15 @@
-"use client";
-import Image from "next/image";
-import logoLight from "@/assets/logo-light.png";
-import Link from "next/link";
-import { List } from "phosphor-react";
-import { useState } from "react";
+'use client';
+import Image from 'next/image';
+import logoLight from '@/assets/logo-light.png';
+import Link from 'next/link';
+import { List } from 'phosphor-react';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [showHamburger, setShowHamburger] = useState(false);
   return (
     <div>
-      <nav className="nav">
+      <nav className="nav navbar-dark">
         <div className="navbar-logo">
           <Link href="/">
             <Image src={logoLight} className="logo-light" alt="Company logo" />
@@ -24,7 +24,7 @@ const Navbar = () => {
             <List />
           </div>
           <div className="mobile-menu">
-            <ul className={`mobile-nav-menu ${showHamburger ? "" : "none"}`}>
+            <ul className={`mobile-nav-menu ${showHamburger ? '' : 'none'}`}>
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -55,32 +55,42 @@ const Navbar = () => {
           </div>
         </div>
         <div className="top-nav">
-          <ul className="navbar-menu flex">
+          <ul className="navbar-menu flex ">
             <li>
-              <Link href="/">Home</Link>
+              <Link className="text-white" href="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/">Job</Link>
+              <Link className="text-white" href="/">
+                Job
+              </Link>
             </li>
             <li>
-              <Link href="/">Explore</Link>
+              <Link className="text-white" href="/">
+                Explore
+              </Link>
             </li>
             <li>
-              <Link href="/">Category</Link>
+              <Link className="text-white" href="/">
+                Category
+              </Link>
             </li>
             <li>
-              <Link href="/">Pages</Link>
+              <Link className="text-white" href="/">
+                Pages
+              </Link>
             </li>
           </ul>
         </div>
         <ul className="navbar-buttons flex">
           <li>
-            <a href="#" className="login">
+            <a href="#" className="login login-dark">
               Login
             </a>
           </li>
           <li>
-            <a href="#" className="btn-register">
+            <a href="#" className="btn-register btn-register-dark">
               Register
             </a>
           </li>

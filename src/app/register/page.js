@@ -1,23 +1,24 @@
-"use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import NavbarDark from "src/components/NavbarDark";
-import { authenticate } from "../lib/actions";
+'use client';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import NavbarDark from 'src/components/NavbarDark';
+import { authenticate } from '../lib/actions';
+import Footer from 'src/components/footer';
 
 export default function Register() {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [role, setRole] = useState("USER");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [role, setRole] = useState('USER');
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch("api/user/register", {
-      method: "POST",
+    const response = await fetch('api/user/register', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name,
@@ -30,7 +31,7 @@ export default function Register() {
     const info = await response.json();
     if (info.success) {
       authenticate({ email, password });
-      router.push("/");
+      router.push('/');
     } else {
       setError(info.error);
     }
@@ -86,6 +87,7 @@ export default function Register() {
           </button>
           <p>{error}</p>
         </form>
+        <Footer />
       </div>
     </>
   );

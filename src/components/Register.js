@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Footer from './Footer';
+import Footer from '@/components/footer';
 import NavbarLight from './NavbarLight';
 
 const Register = () => {
@@ -13,7 +13,6 @@ const Register = () => {
           <p>Create an Account & Start posting or hiring talents</p>
         </div>
       </header>
-      <main></main>
       <Footer />
     </div>
   );

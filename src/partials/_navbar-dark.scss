@@ -1,4 +1,20 @@
+@use './variables' as *;
+.navbar-dark {
+  background-color: $green-navbar-color;
+}
 .logo-light {
-  height: 90px;
-  aspect-ratio: auto 119 / 90;
+  margin: 18px;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.login-dark {
+  color: $lime-green;
+}
+
+.btn-register-dark {
+  background-color: $lime-green;
+  color: rgba(0, 0, 0, 1) !important;
 }
