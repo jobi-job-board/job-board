@@ -55,17 +55,11 @@ export async function POST(req) {
         role,
       },
     });
-    const secretKey = createSecretKey(process.env.JWT_SECRET, "utf-8");
-
-    const token = await new SignJWT({ userId: user.id })
-      .setProtectedHeader({ alg: "HS256" })
-      .sign(secretKey);
-    console.log(token);
-    // const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
-    return NextResponse.json({
-      success: true,
-      token,
-    });
+    if (!!user) {
+      return NextResponse.json({
+        success: true,
+      });
+    }
   } catch (error) {
     return NextResponse.json({
       success: false,

@@ -1,14 +1,16 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 .register-form {
-  max-width: 740px;
+  min-width: 740px;
   height: 950px;
   flex-shrink: 0;
+  border-radius: 20px;
+  // background-color: green;
 }
 
 .register-wrapper {
   margin: 167px 430px;
-  background-color: $green-wrapper;
+  // background-color: $green-wrapper;
 }
 .register-header {
   background: $header-green;
@@ -26,6 +28,7 @@
 .register-h2 {
   margin-top: 24px;
   margin-bottom: 28px;
+  font-size: 62px;
 }
 .register p {
   color: $white;
@@ -38,4 +41,33 @@
 
 .register header {
   padding: 0;
+}
+
+.register-input {
+  min-width: 565px;
+  min-height: 60px;
+  border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #254035;
+  opacity: 0.8029;
+  margin-right: 0;
+}
+
+.left-align-register {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  // margin-bottom: 30px;
+}
+
+.register-label {
+  line-height: 2;
+}
+
+.register-button {
+  margin-top: 64px;
+  min-width: 565px;
+  min-height: 60px;
+  background-color: $green-button-color;
 }

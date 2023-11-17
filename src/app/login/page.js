@@ -1,33 +1,39 @@
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { authenticate } from "../lib/actions";
+// import { useFormState, useFormStatus } from "react-dom";
+
 export default function LoginForm() {
   const router = useRouter();
-  //   const [state, dispatch] = useFormState(authenticate, undefined);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  // const [state, dispatch] = useFormState(authenticate, undefined);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch('api/user/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    authenticate({ email, password });
+    router.push("/");
+    // const response = await fetch("/api/auth/signin", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email,
+    //     password,
+    //   }),
+    // });
 
-    const info = await response.json();
-    if (info.success) {
-      router.push('/listing');
-    } else {
-      setError(info.error);
-    }
+    //   // const info = await response.json();
+    //   // if (info.success) {
+    //   //   console.log(info);
+    //   //   // router.push("/listing");
+    //   // } else {
+    //   //   setError(info.error);
+    //   // }
   }
 
   return (
