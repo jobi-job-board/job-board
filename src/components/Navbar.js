@@ -42,12 +42,12 @@ const Navbar = () => {
                 <div className="nav-divider"></div>
               </li>
               <li>
-                <a href="#" className="login">
+                <a href="/login" className="login">
                   Login
                 </a>
               </li>
               <li>
-                <a href="#" className="btn-register">
+                <a href="/register" className="btn-register">
                   Register
                 </a>
               </li>
@@ -75,12 +75,12 @@ const Navbar = () => {
         </div>
         <ul className="navbar-buttons flex">
           <li>
-            <a href="#" className="login">
+            <a href="/login" className="login">
               Login
             </a>
           </li>
           <li>
-            <a href="#" className="btn-register">
+            <a href="/register" className="btn-register">
               Register
             </a>
           </li>

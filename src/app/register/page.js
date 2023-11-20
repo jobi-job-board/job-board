@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import NavbarDark from 'src/components/NavbarDark';
 import { authenticate } from '../lib/actions';
-import Footer from 'src/components/footer';
+import SmallFooter from 'src/components/SmallFooter';
 
 export default function Register() {
   const router = useRouter();
@@ -40,6 +40,12 @@ export default function Register() {
   return (
     <>
       <NavbarDark />
+      <div className="register-header">
+        <h3 className="text-white register-h3">Register</h3>
+        <p className="text-white register-p">
+          Create an account & Start posting or hiring talent
+        </p>
+      </div>
       <div className="register-wrapper">
         <form className="register-form flex-col-cen" onSubmit={handleSubmit}>
           <h2 className="register-h2">Create Account</h2>
@@ -87,8 +93,8 @@ export default function Register() {
           </button>
           <p>{error}</p>
         </form>
-        <Footer />
       </div>
+      <SmallFooter />
     </>
   );
 }

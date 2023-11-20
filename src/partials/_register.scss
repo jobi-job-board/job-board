@@ -1,16 +1,18 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 .register-form {
-  min-width: 740px;
-  height: 950px;
+  min-width: 700px;
+  padding: 20px 0;
   flex-shrink: 0;
   border-radius: 20px;
-  // background-color: green;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
 }
 
 .register-wrapper {
-  margin: 167px 430px;
-  // background-color: $green-wrapper;
+  padding: 167px 430px;
+  background-color: $green-wrapper;
 }
 .register-header {
   background: $header-green;
@@ -30,6 +32,11 @@
   margin-bottom: 28px;
   font-size: 62px;
 }
+
+.register-p {
+  margin-top: 23px;
+  margin-bottom: 109px;
+}
 .register p {
   color: $white;
   font-size: calc(1.375rem / 5 * 4);
@@ -43,6 +50,9 @@
   padding: 0;
 }
 
+.register-h3 {
+  margin-top: 56px;
+}
 .register-input {
   min-width: 565px;
   min-height: 60px;
@@ -70,4 +80,32 @@
   min-width: 565px;
   min-height: 60px;
   background-color: $green-button-color;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.875px;
+}
+
+@media screen and (max-width: 750px) {
+  .register-wrapper {
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .register-form {
+    min-width: unset;
+    padding: 20px;
+  }
+
+  .register-p {
+    text-align: center;
+  }
+  .register-input,
+  .register-button {
+    min-width: unset;
+    min-width: 80vw;
+  }
+  .register-h2 {
+    margin-top: 34px;
+    font-size: 40px;
+  }
 }
