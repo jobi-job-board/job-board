@@ -1,6 +1,6 @@
 @use './variables' as *;
 
-.register-form {
+.login-form {
   min-width: 700px;
   max-width: 800px;
   padding: 20px 0;
@@ -11,64 +11,61 @@
   justify-content: center;
 }
 
-.register-wrapper {
+.login-wrapper {
   padding: 10%;
   background-color: $green-wrapper;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.register-header {
+.login-header {
   background: $header-green;
   display: grid;
   place-items: center;
 }
 
-.register-header h1 {
+.login-header h1 {
   color: $white;
   font-size: calc(4rem / 5 * 4);
   line-height: calc(1.39em / 5 * 4);
   margin-top: 0.875em;
 }
 
-.register-h2 {
+.login-h2 {
   margin-top: 24px;
-  margin-bottom: 28px;
   font-size: 62px;
 }
 
-.register-p {
-  margin-top: 23px;
-  margin-bottom: 109px;
+.login-p {
+  margin-top: 0;
 }
-.register p {
+.login p {
   color: $white;
   font-size: calc(1.375rem / 5 * 4);
 }
 
-
-.register nav {
+.login nav {
   background: $header-green;
 }
 
-.register header {
+.login header {
   padding: 0;
 }
 
-.register-h3 {
+.login-h3 {
   margin-top: 56px;
 }
-.register-input {
+.login-input {
   min-width: 565px;
   min-height: 60px;
   border-radius: 8px;
-  border-radius: 8px;
-  border: 1px solid #254035;
-  opacity: 0.8029;
+  border-radius: 7px;
+  border: 1px solid rgba(37, 64, 53, 0.06);
+  background: rgba(49, 121, 90, 0.09);
   margin-right: 0;
 }
 
-.left-align-register {
+.left-align-login {
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -76,45 +73,45 @@
   // margin-bottom: 30px;
 }
 
-.register-label {
+.login-label {
   line-height: 2;
 }
 
-.register-button {
-  margin-top: 64px;
+.login-button {
   min-width: 565px;
   min-height: 60px;
   background-color: $green-button-color;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.875px;
+  margin-top: 60px;
 }
 @media screen and (max-width: 1200px) {
-  .register-wrapper {
+  .login-wrapper {
     padding: 100px;
   }
 }
 @media screen and (max-width: 750px) {
-  .register-wrapper {
+  .login-wrapper {
     margin: 0 auto;
     padding: 20%;
   }
 
-  .register-form {
+  .login-form {
     padding: 10%;
     min-width: unset;
     max-width: unset;
   }
 
-  .register-p {
+  .login-p {
     text-align: center;
   }
-  .register-input,
-  .register-button {
+  .login-input,
+  .login-button {
     min-width: unset;
     min-width: 80vw;
   }
-  .register-h2 {
+  .login-h2 {
     margin-top: 34px;
     font-size: 40px;
   }

@@ -72,7 +72,7 @@ export default function Register() {
               id="email"
               placeholder="email"
               value={email}
-              type="text"
+              type="email"
             ></input>
           </div>
           <div className="left-align-register">
@@ -85,7 +85,7 @@ export default function Register() {
               id="password"
               placeholder="password"
               value={password}
-              type="text"
+              type="password"
             ></input>
           </div>
           <button className="register-button" type="submit">
