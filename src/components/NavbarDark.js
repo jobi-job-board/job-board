@@ -1,9 +1,9 @@
-'use client';
-import Image from 'next/image';
-import logoLight from '@/assets/logo-light.png';
-import Link from 'next/link';
-import { List } from 'phosphor-react';
-import { useState } from 'react';
+"use client";
+import Image from "next/image";
+import logoLight from "@/assets/logo-light.png";
+import Link from "next/link";
+import { List } from "phosphor-react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [showHamburger, setShowHamburger] = useState(false);
@@ -24,7 +24,7 @@ const Navbar = () => {
             <List />
           </div>
           <div className="mobile-menu">
-            <ul className={`mobile-nav-menu ${showHamburger ? '' : 'none'}`}>
+            <ul className={`mobile-nav-menu ${showHamburger ? "" : "none"}`}>
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -85,12 +85,12 @@ const Navbar = () => {
         </div>
         <ul className="navbar-buttons flex">
           <li>
-            <a href="#" className="login login-dark">
+            <a href="/login" className="login login-dark">
               Login
             </a>
           </li>
           <li>
-            <a href="#" className="btn-register btn-register-dark">
+            <a href="/register" className="btn-register btn-register-dark">
               Register
             </a>
           </li>
