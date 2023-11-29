@@ -9,6 +9,10 @@ import Image from "next/image";
 export default function Listings() {
   const [listings, setListings] = useState([]);
   const [salary, setSalary] = useState(20000);
+  const [search, setSearch] = useState("");
+  const [citySearch, setCitySearch] = useState("");
+  const [filteredListings, setFilteredListings] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
   async function fetchListings() {
     const res = await fetch("/api/jobDescription");
@@ -25,6 +29,54 @@ export default function Listings() {
     fetchListings();
   }, []);
 
+  function handleSearchListing(e) {
+    e.preventDefault();
+    if (search.length > 0 && citySearch.length > 0) {
+      setFilteredListings(
+        listings.filter((listing) => {
+          return (
+            listing.title.toLowerCase().includes(search.toLowerCase()) &&
+            listing.city.toLowerCase().includes(citySearch.toLowerCase())
+          );
+        })
+      );
+      setFilteredListings((prev) =>
+        prev.filter((listing) => {
+          return listing.salary >= parseInt(salary);
+        })
+      );
+    } else if (search.length > 0) {
+      setFilteredListings(
+        listings.filter((listing) => {
+          return listing.title.toLowerCase().includes(search.toLowerCase());
+        })
+      );
+      setFilteredListings((prev) =>
+        prev.filter((listing) => {
+          return listing.salary >= parseInt(salary);
+        })
+      );
+    } else if (citySearch.length > 0) {
+      setFilteredListings(
+        listings.filter((listing) => {
+          return listing.city.toLowerCase().includes(citySearch.toLowerCase());
+        })
+      );
+      setFilteredListings((prev) =>
+        prev.filter((listing) => {
+          return listing.salary >= parseInt(salary);
+        })
+      );
+    } else {
+      setFilteredListings(
+        listings.filter((listing) => {
+          return listing.salary >= parseInt(salary);
+        })
+      );
+    }
+    setHasSearched(true);
+  }
+
   return (
     <>
       <NavbarDark />
@@ -37,10 +89,18 @@ export default function Listings() {
 
       <div className="listings-wrapper">
         <aside className="listings-sidebar">
-          <form className="listings-sidebar-form">
-            <input className="listings-input" placeholder="search"></input>{" "}
+          <form
+            onSubmit={handleSearchListing}
+            className="listings-sidebar-form"
+          >
+            <input
+              className="listings-input"
+              placeholder="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            ></input>{" "}
             <span className="search-icon">
-              <Image src={SpyGlass}></Image>
+              <Image src={SpyGlass} alt="search icon"></Image>
             </span>
             <div>
               <h6>Job Type</h6>
@@ -95,33 +155,55 @@ export default function Listings() {
               ></input>
             </div>
             <label htmlFor="location-search">
-              <h6>Location</h6>
+              <h6>City</h6>
             </label>
             <input
               id="location-search"
               className="listings-input"
               placeholder="Toronto"
+              value={citySearch}
+              onChange={(e) => setCitySearch(e.target.value)}
             ></input>{" "}
             <span className="search-icon">
-              <Image src={SpyGlass}></Image>
+              <Image src={SpyGlass} alt="search icon"></Image>
             </span>
+            <button type="submit">Filter</button>
           </form>
         </aside>
         <div className="listings-flex">
-          {listings.map((listing) => {
-            return (
-              <div className="listing-div" key={listing.id}>
-                <Link href={`/listings/${listing.id}`}>
-                  <h5 className="listings-title">
-                    {listing.title} <span>{listing.type}</span>
-                  </h5>
-                </Link>
-                <p className="listings-details">
-                  {listing.salary} {listing.city} {listing.country}
-                </p>
-              </div>
-            );
-          })}
+          {!hasSearched &&
+            listings.map((listing) => {
+              return (
+                <div className="listing-div" key={listing.id}>
+                  <Link href={`/listings/${listing.id}`}>
+                    <h5 className="listings-title">
+                      {listing.title} <span>{listing.type}</span>
+                    </h5>
+                  </Link>
+                  <p className="listings-details">
+                    {listing.salary} {listing.city} {listing.country}
+                  </p>
+                </div>
+              );
+            })}
+          {hasSearched &&
+            filteredListings.map((listing) => {
+              return (
+                <div className="listing-div" key={listing.id}>
+                  <Link href={`/listings/${listing.id}`}>
+                    <h5 className="listings-title">
+                      {listing.title} <span>{listing.type}</span>
+                    </h5>
+                  </Link>
+                  <p className="listings-details">
+                    {listing.salary} {listing.city} {listing.country}
+                  </p>
+                </div>
+              );
+            })}
+          {hasSearched && filteredListings.length === 0 && (
+            <h5>No listings found</h5>
+          )}
         </div>
       </div>
       <SmallFooter />
