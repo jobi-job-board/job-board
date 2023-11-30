@@ -1,79 +1,89 @@
-'use client';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import NavbarDark from 'src/components/NavbarDark';
-import SmallFooter from 'src/components/SmallFooter';
-import SpyGlass from '@/assets/icons/spyglass.svg';
-import Image from 'next/image';
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import NavbarDark from "src/components/NavbarDark";
+import SmallFooter from "src/components/SmallFooter";
+import SpyGlass from "@/assets/icons/spyglass.svg";
+import Image from "next/image";
 
 export default function Listings() {
   const [listings, setListings] = useState([]);
   const [salary, setSalary] = useState(20000);
-  const [search, setSearch] = useState('');
-  const [citySearch, setCitySearch] = useState('');
+  const [search, setSearch] = useState("");
+  const [citySearch, setCitySearch] = useState("");
   const [filteredListings, setFilteredListings] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [isFulltime, setIsFulltime] = useState(true);
+  const [isHourly, setIsHourly] = useState(true);
+  const [isPartTime, setIsPartTime] = useState(true);
+  const [isFreelance, setIsFreelance] = useState(true);
 
   async function fetchListings() {
-    const res = await fetch('/api/jobDescription');
+    const res = await fetch("/api/jobDescription");
     const info = await res.json();
     if (info.success) {
       setListings(info.listings);
       console.log(info);
     } else {
-      console.log('error fetching');
+      console.log("error fetching");
     }
   }
 
   useEffect(() => {
     fetchListings();
+    console.log(isHourly);
   }, []);
 
   function handleSearchListing(e) {
     e.preventDefault();
-    if (search.length > 0 && citySearch.length > 0) {
+    setFilteredListings(
+      listings.filter((listing) => {
+        return listing.salary >= parseInt(salary);
+      })
+    );
+    if (search.length > 0) {
       setFilteredListings(
-        listings.filter((listing) => {
-          return (
-            listing.title.toLowerCase().includes(search.toLowerCase()) &&
-            listing.city.toLowerCase().includes(citySearch.toLowerCase())
-          );
-        })
-      );
-      setFilteredListings((prev) =>
-        prev.filter((listing) => {
-          return listing.salary >= parseInt(salary);
-        })
-      );
-    } else if (search.length > 0) {
-      setFilteredListings(
-        listings.filter((listing) => {
+        filteredListings.filter((listing) => {
           return listing.title.toLowerCase().includes(search.toLowerCase());
         })
       );
-      setFilteredListings((prev) =>
-        prev.filter((listing) => {
-          return listing.salary >= parseInt(salary);
-        })
-      );
-    } else if (citySearch.length > 0) {
+    }
+    if (citySearch.length > 0) {
       setFilteredListings(
-        listings.filter((listing) => {
+        filteredListings.filter((listing) => {
           return listing.city.toLowerCase().includes(citySearch.toLowerCase());
         })
       );
-      setFilteredListings((prev) =>
-        prev.filter((listing) => {
-          return listing.salary >= parseInt(salary);
-        })
-      );
-    } else {
+    }
+    if (!isFulltime) {
       setFilteredListings(
-        listings.filter((listing) => {
-          return listing.salary >= parseInt(salary);
+        filteredListings.filter((listing) => {
+          return listing.type !== "fulltime";
         })
       );
     }
+    if (!isHourly) {
+      setFilteredListings(
+        filteredListings.filter((listing) => {
+          return listing.type !== "hourly";
+        })
+      );
+    }
+    if (!isPartTime) {
+      setFilteredListings(
+        filteredListings.filter((listing) => {
+          return listing.type !== "part-time";
+        })
+      );
+    }
+    if (!isFreelance) {
+      setFilteredListings(
+        filteredListings.filter((listing) => {
+          return listing.type !== "freelance";
+        })
+      );
+    }
+
     setHasSearched(true);
   }
 
@@ -100,7 +110,7 @@ export default function Listings() {
                 placeholder="search"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-              ></input>{' '}
+              ></input>{" "}
               <span className="search-icon">
                 <Image src={SpyGlass} alt="search icon"></Image>
               </span>
@@ -112,6 +122,8 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="full-time"
                     type="checkbox"
+                    defaultChecked={isFulltime}
+                    onChange={() => setIsFulltime(!isFulltime)}
                   ></input>
                 </div>
 
@@ -121,7 +133,9 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="hourly"
                     type="checkbox"
-                  ></input>{' '}
+                    defaultChecked={isHourly}
+                    onChange={() => setIsHourly(!isHourly)}
+                  ></input>{" "}
                 </div>
 
                 <div className="checkbox-container">
@@ -130,16 +144,20 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="part-time"
                     type="checkbox"
-                  ></input>{' '}
+                    defaultChecked="true"
+                    onChange={() => setIsPartTime(!isPartTime)}
+                  ></input>{" "}
                 </div>
 
                 <div className="checkbox-container">
-                  <label htmlFor="fixed-price">Fixed-price</label>
+                  <label htmlFor="freelance">Freelance</label>
                   <input
                     className="listings-checkbox"
-                    id="fixed-price"
+                    id="freelance"
                     type="checkbox"
-                  ></input>{' '}
+                    defaultChecked="true"
+                    onChange={() => setIsFreelance(!isFreelance)}
+                  ></input>{" "}
                 </div>
               </div>
               <div className="listings-sidebar-element">
@@ -165,7 +183,7 @@ export default function Listings() {
                 placeholder="Toronto"
                 value={citySearch}
                 onChange={(e) => setCitySearch(e.target.value)}
-              ></input>{' '}
+              ></input>{" "}
               <span className="search-city-icon">
                 <Image src={SpyGlass} alt="search icon"></Image>
               </span>
