@@ -33,6 +33,17 @@ export default function Listings() {
     fetchListings();
   }, []);
 
+  const handleReset = () => {
+    setIsFulltime(true);
+    setIsHourly(true);
+    setIsPartTime(true);
+    setIsFreelance(true);
+    setHasSearched(false);
+    setSalary(20000);
+    setSearch('');
+    setCitySearch('');
+  };
+
   function handleSearchListing(e) {
     e.preventDefault();
     setFilteredListings(
@@ -117,7 +128,9 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="full-time"
                     type="checkbox"
-                    defaultChecked={isFulltime}
+                    checked={isFulltime}
+                    // defaultChecked={isFulltime}
+                    value={isFulltime}
                     onChange={() => setIsFulltime(!isFulltime)}
                   ></input>
                 </div>
@@ -128,7 +141,9 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="hourly"
                     type="checkbox"
-                    defaultChecked={isHourly}
+                    checked={isHourly}
+                    // defaultChecked={isHourly}
+                    value={isHourly}
                     onChange={() => setIsHourly(!isHourly)}
                   ></input>{' '}
                 </div>
@@ -139,7 +154,9 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="part-time"
                     type="checkbox"
-                    defaultChecked="true"
+                    checked={isPartTime}
+                    // defaultChecked={isPartTime}
+                    value={isPartTime}
                     onChange={() => setIsPartTime(!isPartTime)}
                   ></input>{' '}
                 </div>
@@ -150,7 +167,9 @@ export default function Listings() {
                     className="listings-checkbox"
                     id="freelance"
                     type="checkbox"
-                    defaultChecked="true"
+                    // defaultChecked={isFreelance}
+                    checked={isFreelance}
+                    value={isFreelance}
                     onChange={() => setIsFreelance(!isFreelance)}
                   ></input>{' '}
                 </div>
@@ -184,6 +203,9 @@ export default function Listings() {
               </span>
               <button type="submit" className="filter-btn">
                 Filter
+              </button>
+              <button onClick={handleReset} className="filter-btn">
+                Reset
               </button>
             </form>
           </aside>
