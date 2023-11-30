@@ -93,6 +93,14 @@ export default function Listings() {
     setHasSearched(true);
   }
 
+  const numberConverter = (num) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+    }).format(num);
+  };
+
   return (
     <>
       <NavbarDark />
@@ -201,12 +209,14 @@ export default function Listings() {
               <span className="search-city-icon">
                 <Image src={SpyGlass} alt="search icon"></Image>
               </span>
-              <button type="submit" className="filter-btn">
-                Filter
-              </button>
-              <button onClick={handleReset} className="filter-btn">
-                Reset
-              </button>
+              <div className="center">
+                <button type="submit" className="filter-btn">
+                  Filter
+                </button>
+                <button onClick={handleReset} className="filter-btn">
+                  Reset
+                </button>
+              </div>
             </form>
           </aside>
         </div>
@@ -215,13 +225,18 @@ export default function Listings() {
             listings.map((listing) => {
               return (
                 <div className="listing-div" key={listing.id}>
-                  <Link href={`/listings/${listing.id}`}>
-                    <h5 className="listings-title">
-                      {listing.title} <span>{listing.type}</span>
-                    </h5>
-                  </Link>
-                  <p className="listings-details">
-                    {listing.salary} {listing.city} {listing.country}
+                  <h5 className="listings-title">
+                    <Link
+                      className="listing-title"
+                      href={`/listings/${listing.id}`}
+                    >
+                      {listing.title}{' '}
+                    </Link>
+                    <span className="listing-type">({listing.type})</span>
+                  </h5>
+                  <p className="listing-details">
+                    {numberConverter(listing.salary)}
+                    {'  '} {listing.city} {listing.country}
                   </p>
                 </div>
               );
@@ -230,13 +245,18 @@ export default function Listings() {
             filteredListings.map((listing) => {
               return (
                 <div className="listing-div" key={listing.id}>
-                  <Link href={`/listings/${listing.id}`}>
-                    <h5 className="listings-title">
-                      {listing.title} <span>{listing.type}</span>
-                    </h5>
-                  </Link>
-                  <p className="listings-details">
-                    {listing.salary} {listing.city} {listing.country}
+                  <h5 className="listings-title">
+                    <Link
+                      className="listing-title"
+                      href={`/listings/${listing.id}`}
+                    >
+                      {listing.title}{' '}
+                    </Link>
+                    <span className="listing-type">({listing.type})</span>
+                  </h5>
+                  <p className="listing-details">
+                    {numberConverter(listing.salary)}
+                    {'  '} {listing.city} {listing.country}
                   </p>
                 </div>
               );
