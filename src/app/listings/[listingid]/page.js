@@ -1,11 +1,12 @@
-'use client';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import NavbarDark from 'src/components/NavbarDark';
-import Dollar from '@/assets/icons/dollar-sign.svg';
-import Location from '@/assets/icons/location.svg';
-import Type from '@/assets/icons/briefcase.svg';
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import NavbarDark from "src/components/NavbarDark";
+import Dollar from "@/assets/icons/dollar-sign.svg";
+import Location from "@/assets/icons/location.svg";
+import Type from "@/assets/icons/briefcase.svg";
+import SmallFooter from "src/components/SmallFooter";
 
 export default function ListingDetail({ params }) {
   const [details, setDetails] = useState({});
@@ -23,9 +24,9 @@ export default function ListingDetail({ params }) {
   }
 
   const numberConverter = (num) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
       minimumFractionDigits: 0,
     }).format(num);
   };
@@ -58,9 +59,10 @@ export default function ListingDetail({ params }) {
         </div>
         <section className="details-job-description">
           <h4 className="details-subheading">Job Description</h4>
-          <p className="details-content">{details.description}</p>
+          <div dangerouslySetInnerHTML={{ __html: details.description }}></div>
         </section>
       </section>
+      <SmallFooter />
     </>
   );
 }

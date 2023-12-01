@@ -1,4 +1,4 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 .details-h3 {
   margin-top: 50px;
@@ -62,4 +62,25 @@
 
 .details-subheading {
   margin-top: 70px;
+}
+
+.details-ul {
+  list-style: disc !important;
+
+  color: rgba(0, 0, 0, 0.75);
+  font-family: Gordita;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 188.235% */
+}
+
+.details-title {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .details-card-wrapper {
+    display: none;
+  }
 }

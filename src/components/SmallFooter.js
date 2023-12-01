@@ -1,14 +1,13 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import DarkLogo from '@/assets/logo-dark.png';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import blackSquare from '@/assets/icons/black-square.png';
+import React from "react";
+import Image from "next/image";
+import DarkLogo from "@/assets/logo-dark.png";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import blackSquare from "@/assets/icons/black-square.png";
 import {
   footerLinksData,
   footerProductsData,
   footerLegalData,
-} from '../helpers/constants';
+} from "../helpers/constants";
 
 const SmallFooter = () => {
   return (
