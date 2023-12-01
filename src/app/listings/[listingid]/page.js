@@ -1,5 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import NavbarDark from 'src/components/NavbarDark';
+import Dollar from '@/assets/icons/dollar-sign.svg';
+import Location from '@/assets/icons/location.svg';
+import Type from '@/assets/icons/briefcase.svg';
 
 export default function ListingDetail({ params }) {
   const [details, setDetails] = useState({});
@@ -15,5 +21,46 @@ export default function ListingDetail({ params }) {
       console.log(info);
     }
   }
-  return <h1>testing {details.title}</h1>;
+
+  const numberConverter = (num) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+    }).format(num);
+  };
+
+  return (
+    <>
+      <NavbarDark />
+      <header className="details-header">
+        <h3 className="text-white details-h3">{details.title}</h3>
+      </header>
+      <section className="details-wrapper">
+        <div className="details-card-wrapper">
+          <article className="details-card flex-cen">
+            <Image src={Dollar} alt="dollar-sign"></Image>
+            <p>Salary</p>
+            <p className="details-card-p">
+              {numberConverter(details.salary)}/year
+            </p>
+          </article>
+          <article className="details-card flex-cen">
+            <Image src={Location} alt="location"></Image>
+            <p>Location</p>
+            <p className="details-card-p">{details.city}</p>
+          </article>
+          <article className="details-card flex-cen">
+            <Image src={Type} alt="type"></Image>
+            <p>Job Type</p>
+            <p className="details-card-p">{details.type}</p>
+          </article>
+        </div>
+        <section className="details-job-description">
+          <h4 className="details-subheading">Job Description</h4>
+          <p className="details-content">{details.description}</p>
+        </section>
+      </section>
+    </>
+  );
 }
